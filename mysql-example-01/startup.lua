@@ -38,7 +38,7 @@ alt.on("resourceStart",
 
             Select ID:1 row from accounts:
             local row = dbConnection:query("SELECT * FROM `accounts` WHERE id=?", 1)
-            
+
         ]]--
         
         
@@ -54,5 +54,3 @@ alt.on("resourceStop",
         dbConnection:close()
     end
 )
-
-alt.exports("")
