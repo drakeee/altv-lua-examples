@@ -12,3 +12,9 @@ alt.on("resourceStart",
         dbConnection = mysql:connect(settings.host, settings.user, settings.password, settings.database, settings.port)
     end
 )
+
+alt.on("resourceStop",
+    function()
+        dbConnection:close()
+    end
+)
