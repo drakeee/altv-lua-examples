@@ -28,6 +28,20 @@ alt.on("resourceStart",
             Descrption: We connect to MySQL db with this function.
         ]]--
         dbConnection = mysql:connect(settings.host, settings.user, settings.password, settings.database, settings.port)
+
+        --[[
+            Select all rows from accounts:
+            local row = dbConnection:query("SELECT * FROM `accounts`")
+
+            We can see the output:
+            logInfo(tostring(inspect(row)))
+
+            Select ID:1 row from accounts:
+            local row = dbConnection:query("SELECT * FROM `accounts` WHERE id=?", 1)
+            
+        ]]--
+        
+        
     end
 )
 
@@ -40,3 +54,5 @@ alt.on("resourceStop",
         dbConnection:close()
     end
 )
+
+alt.exports("")
