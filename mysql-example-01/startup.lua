@@ -35,10 +35,21 @@ alt.on("resourceStart",
 
             We can see the output:
             logInfo(tostring(inspect(row)))
+            OUTPUT:
+            {
+                id = 1,
+                username = "cleopatra",
+                mail = "blablabla@blabla.com",
+                password = "123456",
+                socialClub = "cleopatra"
+            }
 
             Select ID:1 row from accounts:
             local row = dbConnection:query("SELECT * FROM `accounts` WHERE id=?", 1)
 
+            Another Examples:
+            dbConnection:query("SELECT 2020, ?", "Hello World")
+            dbConnection:query("SELECT :example, :hello", {[":example"] = 2020, [":hello"] = "Hello World"})
         ]]--
         
         
